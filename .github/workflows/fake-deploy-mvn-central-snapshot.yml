@@ -8,11 +8,11 @@
 
 name: (Fake) Generate a version in MVNCentral
 
-on:
+on: 
   workflow_dispatch:
-  pull_request:
-    types: [closed]
-    branches: [develop]
+    pull_request:
+      types: [closed]
+      branches: [develop]
 
 jobs:
   _Fake_Generate-a-snapshot-in-MVNCentral:
