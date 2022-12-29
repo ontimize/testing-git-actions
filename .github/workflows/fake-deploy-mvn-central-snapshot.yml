@@ -15,16 +15,14 @@ on:
   workflow_dispatch:
     inputs:
       manual_exec:
-        description: 'Manually dispatch'
-        type: choice
+        description: 'Manually dispatch. DO NOT CHANGE'
+        type: string
         required: true
         default: 'Manually'
-        options:
-          - Manually
 
 jobs:
   Fake_Generate-a-snapshot-in-MVNCentral:
-    if: ${{ github.event.pull_request.merged == true || github.event.inputs.environment == Manually }}
+    if: ${{ github.event.pull_request.merged == true || github.event.inputs.environment == 'Manually' }}
     runs-on: ubuntu-latest
     steps:
     - name: Print merge message
