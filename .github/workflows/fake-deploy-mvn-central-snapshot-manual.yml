@@ -7,12 +7,7 @@
 # documentation.
 
 name: (Fake) Generate a version in MVNCentral
-
-on:
-  pull_request:
-    types: [closed]
-    branches: [develop]
-
+on: workflow_dispatch
 jobs:
   _Fake_Generate-a-snapshot-in-MVNCentral:
     if: github.event.pull_request.merged == true || github.event.workflow_dispatch == true
