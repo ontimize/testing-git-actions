@@ -9,7 +9,7 @@
 name: (Fake) Generate a version in MVNCentral
 on: workflow_dispatch
 jobs:
-  _Fake_Generate-a-snapshot-in-MVNCentral:
+  Merged_PR:
     if: github.event.pull_request.merged == true || github.event.workflow_dispatch == true
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
         distribution: 'temurin'
     - name: Publish to Apache Maven Central
       run: mvn -B verify
-  Fake_Generate-a-snapshot-in-MVNCentral:
+  Closed_PR:
     if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
     steps:
