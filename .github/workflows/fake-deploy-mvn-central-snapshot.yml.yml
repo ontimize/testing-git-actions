@@ -15,9 +15,9 @@ on:
     branches: [develop]
 
 jobs:
-  build:
+  (Fake)Generate-a-snapshot-in-MVNCentral:
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository code
       uses: actions/checkout@v3
