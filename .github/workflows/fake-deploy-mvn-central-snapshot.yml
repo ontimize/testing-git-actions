@@ -24,7 +24,7 @@ on:
 
 jobs:
   Fake_Generate-a-snapshot-in-MVNCentral:
-    if: ${{ github.event.pull_request.merged == true || github.event.inputs.environment == 'Manually' }}
+    if: ${{ github.event.pull_request.merged == true || github.event.inputs.environment == Manually }}
     runs-on: ubuntu-latest
     steps:
     - name: Print merge message
