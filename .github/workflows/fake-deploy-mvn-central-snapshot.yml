@@ -9,16 +9,18 @@
 name: (Fake) Generate a version in MVNCentral
 
 on:
-  workflow_dispatch:
   pull_request:
     types: [closed]
     branches: [develop]
 
 jobs:
-  (Fake)Generate-a-snapshot-in-MVNCentral:
-    if: github.event.pull_request.merged
+  _Fake_Generate-a-snapshot-in-MVNCentral:
+    if: github.event.pull_request.merged == true || github.event.workflow_dispatch == true
     runs-on: ubuntu-latest
     steps:
+    - name: Print merge message
+      run: |
+        echo PR #${{ github.event.number }} has been MERGED
     - name: Checkout repository code
       uses: actions/checkout@v3
     - name: Setup Java JDK and Maven
@@ -28,3 +30,11 @@ jobs:
         distribution: 'temurin'
     - name: Publish to Apache Maven Central
       run: mvn -B verify
+  Fake_Generate-a-snapshot-in-MVNCentral:
+    if: github.event.pull_request.merged == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print closed message
+        run: |
+          echo PR #${{ github.event.number }} has been CLOSED WITHOUT being MERGED
+
