@@ -12,6 +12,15 @@ on:
   pull_request:
     types: [closed]
     branches: [develop]
+  workflow_dispatch:
+    inputs:
+      manual_exec:
+        description: 'Manually dispatch'
+        type: choice
+        required: true
+        default: 'Manually'
+        options:
+          - Manually
 
 jobs:
   _Fake_Generate-a-snapshot-in-MVNCentral:
