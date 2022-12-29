@@ -23,7 +23,7 @@ on:
           - Manually
 
 jobs:
-  _Fake_Generate-a-snapshot-in-MVNCentral:
+  Fake_Generate-a-snapshot-in-MVNCentral:
     if: github.event.pull_request.merged == true || github.event.inputs.environment == 'Manually'
     runs-on: ubuntu-latest
     steps:
@@ -39,11 +39,3 @@ jobs:
         distribution: 'temurin'
     - name: Publish to Apache Maven Central
       run: mvn -B verify
-  Fake_Generate-a-snapshot-in-MVNCentral:
-    if: github.event.pull_request.merged == false
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print closed message
-        run: |
-          echo PR #${{ github.event.number }} has been CLOSED WITHOUT being MERGED
-
