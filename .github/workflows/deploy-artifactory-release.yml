@@ -55,8 +55,8 @@ jobs:
           server_port: 587
           username: ${{secrets.EMAIL_USER}}
           password: ${{secrets.EMAIL_PASSWORD}}
-          subject: Nueva versión de Ontimize EE Report 🚀
-          to: ${{secrets.EMAIL_TARGET_TEST}}
+          subject: Nueva versión de Ontimize Boot 🚀
+          to: ${{secrets.EMAIL_TARGET}}
           from: ${{secrets.EMAIL_USER_FROM}}
           html_body: |
             <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -271,7 +271,7 @@ jobs:
                   <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 20px;font-family:arial,helvetica,sans-serif;" align="left">
 
               <div style="color: #6b6b6b; line-height: 140%; text-align: left; word-wrap: break-word;">
-                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Hemos lanzado la versión <strong>3.2.0</strong> de <strong>Ontimize EE Report</strong> 🚀</span></p>
+                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Hemos lanzado la versión <strong>3.9.0</strong> de <strong>Ontimize Boot</strong> 🚀</span></p>
               </div>
 
                   </td>
@@ -285,7 +285,7 @@ jobs:
                   <td style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px 20px;font-family:arial,helvetica,sans-serif;" align="left">
 
               <div style="color: #6b6b6b; line-height: 140%; text-align: left; word-wrap: break-word;">
-                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Ya está disponible para su uso en Maven Central. Haciendo clic en el siguiente botón podéis consultar los cambios que se han realizado en esta nueva versión de <strong>Ontimize EE Report</strong>:</span></p>
+                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Ya está disponible para su uso en Maven Central. Haciendo clic en el siguiente botón podéis consultar los cambios que se han realizado en esta nueva versión de <strong>Ontimize Boot</strong>:</span></p>
               </div>
 
                   </td>
@@ -300,8 +300,8 @@ jobs:
 
               <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
             <div align="center">
-              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-jee-report/blob/3.2.0/CHANGELOG.md" style="height:37px; v-text-anchor:middle; width:221px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->
-              <a href="https://github.com/ontimize/ontimize-jee-report/blob/3.2.0/CHANGELOG.md" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/blob/3.9.0/CHANGELOG.md" style="height:37px; v-text-anchor:middle; width:221px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->
+              <a href="https://github.com/ontimize/ontimize-boot/blob/3.9.0/CHANGELOG.md" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                 <span style="display:block;padding:10px 50px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;">Ver el Changelog ⚙</span></strong></span>
               </a>
               <!--[if mso]></center></v:roundrect><![endif]-->
@@ -333,8 +333,8 @@ jobs:
 
               <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
             <div align="center">
-              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-jee-report/tree/3.2.0" style="height:37px; v-text-anchor:middle; width:172px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->  
-                <a href="https://github.com/ontimize/ontimize-jee-report/tree/3.2.0" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/tree/3.9.0" style="height:37px; v-text-anchor:middle; width:172px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->  
+                <a href="https://github.com/ontimize/ontimize-boot/tree/3.9.0" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                   <span style="display:block;padding:10px 50px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;">Ir a GitHub</span></strong></span>
                 </a>
               <!--[if mso]></center></v:roundrect><![endif]-->
