@@ -1,5 +1,15 @@
 name: Send mail
-on: workflow_dispatch
+on:
+  workflow_dispatch :
+    inputs:
+      mail_destiny:
+        description: Mail destiny
+        required: true
+        default: 'Test'
+        type: choice
+        options:
+          - Test
+          - Imatia
 jobs:
   Send-mail:
     runs-on: ubuntu-latest
