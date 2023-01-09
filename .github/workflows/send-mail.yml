@@ -26,12 +26,11 @@ jobs:
       - name: Get input parameters
         run: |
           echo "BRANCH=${{ github.event.inputs.BRANCH }}" >> $GITHUB_ENV
+          DESTINY=${{ github.event.inputs.MAIL_DESTINY }}
           RECIPIENT=${{secrets.EMAIL_TARGET_TEST}}
-          if MAIL_DESTINY="Imatia"
-            RECIPIENT=${{secrets.EMAIL_TARGET_TEST_2}}
+          if [ "$DESTINY" = "Imatia" ]; then
+          RECIPIENT=${{secrets.EMAIL_TARGET_TEST_2}}
           fi
-          $RECIPIENT
-          echo "RECIPIENT=$RECIPIENT" >> $GITHUB_ENV
       - name: Checkout repository code
         uses: actions/checkout@v3
         with:
