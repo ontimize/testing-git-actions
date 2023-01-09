@@ -23,13 +23,29 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Get input parameters
+        run: |
+          echo "BRANCH=${{ github.event.inputs.BRANCH }}" >> $GITHUB_ENV
+          RECIPIENT=${{secrets.EMAIL_TARGET_TEST}}
+          if MAIL_DESTINY="Imatia"
+            RECIPIENT=${{secrets.EMAIL_TARGET_TEST_2}}
+          fi
+          $RECIPIENT
+          echo "RECIPIENT=$RECIPIENT" >> $GITHUB_ENV
       - name: Checkout repository code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ env.BRANCH }}
+          fetch-depth: 0
       - name: Setup Java JDK and Maven
         uses: ontimize/setup-java-maven-gitAction@v2.4.4
         with:
           distribution: 'temurin'
           java-version: '11'
+      - name: Getting version
+        run: |
+          version=$(mvn help:evaluate -q -Dexpression=project.version -DforceStdout)
+          echo "VERSION=$version" >> $GITHUB_ENV
       - name: Send email
         uses: dawidd6/action-send-mail@v3
         with:
@@ -253,7 +269,7 @@ jobs:
                   <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 20px;font-family:arial,helvetica,sans-serif;" align="left">
 
               <div style="color: #6b6b6b; line-height: 140%; text-align: left; word-wrap: break-word;">
-                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Hemos lanzado la versión <strong>3.9.0</strong> de <strong>Ontimize Boot</strong> 🚀</span></p>
+                <p style="font-size: 14px; line-height: 140%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 19.6px;">Hemos lanzado la versión <strong>${{ env.VERSION }}</strong> de <strong>Ontimize Boot</strong> 🚀</span></p>
               </div>
 
                   </td>
@@ -282,8 +298,8 @@ jobs:
 
               <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
             <div align="center">
-              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/blob/3.9.0/CHANGELOG.md" style="height:37px; v-text-anchor:middle; width:221px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->
-              <a href="https://github.com/ontimize/ontimize-boot/blob/3.9.0/CHANGELOG.md" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/blob/${{ env.VERSION }}/CHANGELOG.md" style="height:37px; v-text-anchor:middle; width:221px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->
+              <a href="https://github.com/ontimize/ontimize-boot/blob/${{ env.VERSION }}/CHANGELOG.md" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                 <span style="display:block;padding:10px 50px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;">Ver el Changelog ⚙</span></strong></span>
               </a>
               <!--[if mso]></center></v:roundrect><![endif]-->
@@ -315,8 +331,8 @@ jobs:
 
               <!--[if mso]><style>.v-button {background: transparent !important;}</style><![endif]-->
             <div align="center">
-              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/tree/3.9.0" style="height:37px; v-text-anchor:middle; width:172px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->  
-                <a href="https://github.com/ontimize/ontimize-boot/tree/3.9.0" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+              <!--[if mso]><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://github.com/ontimize/ontimize-boot/tree/${{ env.VERSION }}" style="height:37px; v-text-anchor:middle; width:172px;" arcsize="11%"  stroke="f" fillcolor="#bedbf9"><w:anchorlock/><center style="color:#3598db;font-family:arial,helvetica,sans-serif;"><![endif]-->  
+                <a href="https://github.com/ontimize/ontimize-boot/tree/${{ env.VERSION }}" target="_blank" class="v-button" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #3598db; background-color: #bedbf9; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
                   <span style="display:block;padding:10px 50px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px;">Ir a GitHub</span></strong></span>
                 </a>
               <!--[if mso]></center></v:roundrect><![endif]-->
