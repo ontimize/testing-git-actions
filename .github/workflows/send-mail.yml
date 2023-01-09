@@ -2,7 +2,7 @@ name: Send mail
 on:
   workflow_dispatch :
     inputs:
-      mail_destiny:
+      MAIL_DESTINY:
         description: Mail destiny
         required: true
         default: 'Test'
@@ -10,6 +10,13 @@ on:
         options:
           - Test
           - Imatia
+      BRANCH:
+        description: 'Branch'
+        type: choice
+        required: true
+        default: 'main'
+        options:
+          - main
 jobs:
   Send-mail:
     runs-on: ubuntu-latest
