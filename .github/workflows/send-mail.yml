@@ -31,6 +31,7 @@ jobs:
           if [ "$DESTINY" = "Imatia" ]; then
           RECIPIENT=${{secrets.EMAIL_TARGET_TEST_2}}
           fi
+          echo "RECIPIENT=$RECIPIENT" >> $GITHUB_ENV
       - name: Checkout repository code
         uses: actions/checkout@v3
         with:
@@ -53,7 +54,7 @@ jobs:
           username: ${{ secrets.EMAIL_USER }}
           password: ${{secrets.EMAIL_PASSWORD}}
           subject: Prueba de correo
-          to: ${{secrets.EMAIL_TARGET_TEST}}
+          to: ${{ env.RECIPIENT }}
           from: ${{secrets.EMAIL_USER_FROM}}
           html_body: |
             <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
